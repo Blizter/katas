@@ -1,5 +1,4 @@
-def fizz_buzz(num):
-
+def fizz_buzz(num: int):
     string=""
 
     if num % 3 == 0:
