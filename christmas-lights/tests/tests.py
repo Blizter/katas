@@ -56,11 +56,11 @@ turn_off_range_output = [
 ]
 
 
+grid_height = 10
+grid_width = 10
+
 
 class TestLightGrid:
-
-    grid_height = 10
-    grid_width = 10
 
     def test_turn_on_all_lights(self):
 
