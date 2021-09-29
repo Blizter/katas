@@ -3,15 +3,12 @@ import pathlib
 
 class LightGrid:
     def __init__(self, height: int, width: int):
-        self.height = height
-        self.width = width
-        self.grid = [[0 for i in range(self.width)] for j in range(self.height)]
+        self.grid = [[0 for i in range(width)] for j in range(height)]
 
     def __fix_coordinates(self, x_1, y_1, x_2, y_2):
 
         if x_1 > x_2:
             x_1, x_2 = x_2, x_1
-
         if y_1 > y_2:
             y_1, y_2 = y_2, y_1
 
@@ -19,12 +16,6 @@ class LightGrid:
         y_2 += 1
 
         return x_1, y_1, x_2, y_2
-
-    def show_lights(self) -> str:
-        return "\n".join(["".join([str(i) for i in row]) for row in self.grid])
-
-    def write_to_file(self):
-        pass
 
     def turn_on(self, x_1, y_1, x_2, y_2):
 
@@ -55,3 +46,9 @@ class LightGrid:
                 self.grid[i][j] = 1 if (self.grid[i][j] == 0) else 0
 
         return self.grid
+
+    def show_lights(self) -> str:
+        return "\n".join(["".join([str(i) for i in row]) for row in self.grid])
+
+    def write_to_file(self):
+        pass
