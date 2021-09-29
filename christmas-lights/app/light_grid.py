@@ -1,3 +1,6 @@
+import pathlib
+
+
 class LightGrid:
     def __init__(self, height: int, width: int):
         self.height = height
@@ -7,10 +10,11 @@ class LightGrid:
     def show_lights(self) -> str:
         return "\n".join(["".join([str(i) for i in row]) for row in self.grid])
 
-    def __fix_coordinates(self, x_1: int, y_1: int, x_2: int, y_2: int):
+    def __fix_coordinates(self, x_1, y_1, x_2, y_2):
 
         if x_1 > x_2:
             x_1, x_2 = x_2, x_1
+
         if y_1 > y_2:
             y_1, y_2 = y_2, y_1
 
@@ -45,9 +49,6 @@ class LightGrid:
 
         for i in range(x_1, x_2):
             for j in range(y_1, y_2):
-                if self.grid[i][j] == 0:
-                    self.grid[i][j] = 1
-                else:
-                    self.grid[i][j] = 0
+                self.grid[i][j] = 1 if (self.grid[i][j] == 0) else 0
 
         return self.grid
