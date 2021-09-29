@@ -7,9 +7,6 @@ class LightGrid:
         self.width = width
         self.grid = [[0 for i in range(self.width)] for j in range(self.height)]
 
-    def show_lights(self) -> str:
-        return "\n".join(["".join([str(i) for i in row]) for row in self.grid])
-
     def __fix_coordinates(self, x_1, y_1, x_2, y_2):
 
         if x_1 > x_2:
@@ -22,6 +19,12 @@ class LightGrid:
         y_2 += 1
 
         return x_1, y_1, x_2, y_2
+
+    def show_lights(self) -> str:
+        return "\n".join(["".join([str(i) for i in row]) for row in self.grid])
+
+    def write_to_file(self):
+        pass
 
     def turn_on(self, x_1, y_1, x_2, y_2):
 
