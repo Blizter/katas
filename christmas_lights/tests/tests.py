@@ -54,10 +54,8 @@ toggled_square_of_one_grid = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 ]
 
-
 grid_height = 10
 grid_width = 10
-
 
 class TestLightGrid:
 
