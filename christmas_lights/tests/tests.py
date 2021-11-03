@@ -1,5 +1,5 @@
 import pytest
-from app import light_grid
+from src import light_grid
 
 
 all_one_grid = [
@@ -164,3 +164,19 @@ class TestLightGrid:
         toggle_all_lights = test_light_grid.toggle(x_1=0, y_1=0, x_2=9, y_2=9)
 
         assert toggle_all_lights == toggled_square_of_one_grid
+
+    def count_all_lights_on(self):
+
+        test_light_grid = light_grid.LightGrid(height=grid_height, width=grid_width)
+
+        test_light_grid.turn_on(x_1=0, y_1=0, x_2=9, y_2=9)
+        count=test_light_grid.get_lit_lights()
+        assert count == 100
+
+    def count_partial_lights_on(self):
+
+        test_light_grid = light_grid.LightGrid(height=grid_height, width=grid_width)
+
+        test_light_grid.turn_on(x_1=0, y_1=0, x_2=2, y_2=2)
+        count=test_light_grid.get_lit_lights()
+        assert count == 9
